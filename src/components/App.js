@@ -13,6 +13,27 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    console.log('component did mount');
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('component did update');
+    console.log('prevProps', prevProps);
+    console.log('prevState', prevState);
+    const nextContacts = this.state.contacts;
+    const prevContacts = prevState.contacts;
+    if (nextContacts !== prevContacts) {
+      console.log('обновились контакты');
+      localStorage.setItem('contacts', JSON.stringify(nextContacts));
+    }
+  }
+
   addContact = ({ name, number }) => {
     const isNameInContact = this.state.contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase(),
@@ -75,7 +96,7 @@ class App extends Component {
 
 export default App;
 
-App.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  filter: PropTypes.string.isRequired,
-};
+// App.propTypes = {
+//   contacts: PropTypes.array.isRequired,
+//   filter: PropTypes.string.isRequired,
+// };
