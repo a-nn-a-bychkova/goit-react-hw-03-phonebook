@@ -1,6 +1,6 @@
 import React from 'react';
-import s from '../styles/Input.module.css';
 import PropTypes from 'prop-types';
+import s from '../styles/Input.module.css';
 
 const Filter = ({ value, onChange }) => (
   <label className={s.Label}>

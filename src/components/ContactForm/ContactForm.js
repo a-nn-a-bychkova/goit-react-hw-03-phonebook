@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import s from '../styles/Input.module.css';
 import PropTypes from 'prop-types';
+import s from '../styles/Input.module.css';
 
 class ContactForm extends Component {
   static propTypes = {

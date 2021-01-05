@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import shortid from 'shortid';
 import ContactForm from './ContactForm';
-import initialContacts from '../initialContacts.json';
 import ContactList from './ContactList';
 import Filter from './Filter';
-import shortid from 'shortid';
-import PropTypes from 'prop-types';
+// import initialContacts from '../initialContacts.json';
 
 class App extends Component {
   state = {
