@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 
 class App extends Component {
   state = {
-    // contacts: initialContacts,
     contacts: [],
     filter: '',
   };
@@ -95,8 +94,3 @@ class App extends Component {
 }
 
 export default App;
-
-// App.propTypes = {
-//   contacts: PropTypes.array.isRequired,
-//   filter: PropTypes.string.isRequired,
-// };
